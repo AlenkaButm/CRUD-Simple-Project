@@ -1,0 +1,24 @@
+﻿@model Employee_CRUD.Models.AddEmployeeViewModel
+@{
+}
+
+<h2>Добавление сотрудника</h2>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">Имя</label>
+        <input type="text" class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email</label>
+        <input type="email" class="form-control" asp-for="Email">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Дата рождения</label>
+        <input type="date" class="form-control" asp-for="DateOfBirth">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Дата приема на работу</label>
+        <input type="date" class="form-control" asp-for="DateEmployment">
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+</form>

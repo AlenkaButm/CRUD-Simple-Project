@@ -1,0 +1,41 @@
+﻿@model List<Employee_CRUD.Models.Domain.Employee>
+@{
+}
+
+<h1>Список сотрудников</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Идентификатор</th>
+            <th>Имя</th>
+            <th>Email</th>
+            <th>Дата рождения</th>
+            <th>Дата приема на работу</th>
+            <th>Дата увольнения</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var employee in Model)
+        {
+            <tr>
+                <td>@employee.Id</td>
+                <td>@employee.Name</td>
+                <td>@employee.Email</td>
+                <td>@employee.DateOfBirth</td>
+                <td>@employee.DateEmployment</td>
+                @if (employee.DateDismissal != null)
+                {
+                    <td>@employee.DateDismissal</td>
+                }
+                else {
+                    <td>Сотрудник работает</td>
+                }
+                <td><a href="Employee/View/{@employee.Id}">Изменить</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Employee" asp-action="Add"><button type="button" class="btn btn-primary">Добавить сотрудника</button></a>

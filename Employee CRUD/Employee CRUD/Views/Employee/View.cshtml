@@ -1,0 +1,37 @@
+﻿@model Employee_CRUD.Models.UpdateEmployeeViewModel
+@{
+}
+
+<h1>Редактирование сотрудника</h1>
+
+<form method="post" action="View" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">Идентификатор</label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Имя</label>
+        <input type="text" class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email</label>
+        <input type="text" class="form-control" asp-for="Email">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Дата рождения</label>
+        <input type="date" class="form-control" asp-for="DateOfBirth">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Дата приема на работу</label>
+        <input type="date" class="form-control" asp-for="DateEmployment">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Дата увольнения</label>
+        <input type="date" class="form-control" asp-for="DateDismissal">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+
+    <button type="submit" class="btn btn-danger" asp-controller="Employee" asp-action="Delete">Удалить сотрудника</button>
+</form>
+
